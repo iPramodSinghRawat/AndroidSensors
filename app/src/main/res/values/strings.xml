@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Alpha Sensors</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_accelerometer">Accelerometer</string>
+    <string name="title_activity_ambient_temperature">Ambient Temperature</string>
+    <string name="title_activity_gravity">Gravity</string>
+    <string name="title_activity_gyroscope">Gyroscope</string>
+    <string name="title_activity_light">Light</string>
+    <string name="title_activity_linear_acceleration">Linear Acceleration</string>
+    <string name="title_activity_magnetic_field">Magnetic Field</string>
+    <string name="title_activity_orientation">Orientation</string>
+    <string name="title_activity_pressure">Pressure</string>
+    <string name="title_activity_proximity">Proximity</string>
+    <string name="title_activity_relative_humidity">Relative Humidity</string>
+    <string name="title_activity_rotation_vector">Rotation Vector</string>
+    <string name="title_activity_magnetic_field_uncalibrated">Magnetic Field (Uncalibrated)</string>
+    <string name="title_activity_gyroscope_uncalibrated">Gyroscope (Uncalibrated)</string>
+    <string name="title_activity_step_counter">Step Counter</string>
+</resources>

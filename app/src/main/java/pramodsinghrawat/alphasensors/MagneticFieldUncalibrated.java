@@ -1,0 +1,116 @@
+package pramodsinghrawat.alphasensors;
+
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
+
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
+public class MagneticFieldUncalibrated extends SuperDrawerActivity implements SensorEventListener {
+
+    DecimalFormat decimalFormat;
+    private SensorManager mSensorManager;
+    private Sensor senMagneticFieldUncalibrated;
+    private TextView sensorReadingTV,sensorDetailTV,sensorDescriptionTV;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sensor);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        //drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        sensorReadingTV = findViewById(R.id.sensorReadingTV);
+        sensorDetailTV = findViewById(R.id.sensorDetailTV);
+        sensorDescriptionTV = findViewById(R.id.sensorDescriptionTV);
+
+        decimalFormat = new DecimalFormat("####.#");
+        decimalFormat.setRoundingMode(RoundingMode.HALF_UP);
+        decimalFormat.setMaximumFractionDigits(1);
+        decimalFormat.setMinimumFractionDigits(1);
+
+        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        processHideDrawerItems(mSensorManager,this);
+        senMagneticFieldUncalibrated = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD_UNCALIBRATED);
+
+        sensorDescriptionTV.setText("Similar to MAGNETIC FIELD but the hard iron calibration " +
+                "(device calibration due to distortions that arise from magnetized iron, steel or " +
+                "permanent magnets on the device) is not considered in the given sensor values. " +
+                "However, such hard iron bias values are returned to you separately in the result " +
+                "values so you may use them for custom calibrations.");
+
+    }
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        Sensor mySensor = sensorEvent.sensor;
+        if(mySensor.getType() == Sensor.TYPE_MAGNETIC_FIELD_UNCALIBRATED){
+            magneticUncalibratedReading(sensorEvent);
+            //mGravity = sensorEvent.values;
+            //gravityReading(sensorEvent);
+        }
+    }
+
+    public void magneticUncalibratedReading(SensorEvent sensorEvent){
+        Sensor mySensor = sensorEvent.sensor;
+        sensorReadingTV.setText(
+                        "\n x_uncalib= " + decimalFormat.format(sensorEvent.values[0]) +" micro-Tesla (μT) "+
+                        "\n y_uncalib = " + decimalFormat.format(sensorEvent.values[1]) +" micro-Tesla (μT) "+
+                        "\n z_uncalib = " + decimalFormat.format(sensorEvent.values[2]) +" micro-Tesla (μT) "+
+                        "\n x_bias = " + decimalFormat.format(sensorEvent.values[3]) +" micro-Tesla (μT) "+
+                        "\n y_bias = " + decimalFormat.format(sensorEvent.values[4]) +" micro-Tesla (μT) "+
+                        "\n z_bias = " + decimalFormat.format(sensorEvent.values[5]) +" micro-Tesla (μT) ");
+
+
+        sensorDetailTV.setText(
+                "\n MaximumRange: " + mySensor.getMaximumRange() +" micro-Tesla (μT)" +
+                        "\n Vendor: " + mySensor.getVendor() +
+                        "\n Version: " + mySensor.getVersion()+
+                        "\n Resolution: " + mySensor.getResolution()+
+                        "\n Power: " + mySensor.getPower());
+    }
+
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSensorManager.registerListener(this, senMagneticFieldUncalibrated, SensorManager.SENSOR_DELAY_NORMAL);
+        //mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // unregister sensor listeners to prevent the activity from draining the device's battery.
+        mSensorManager.unregisterListener(this);
+    }
+
+    //When this Activity isn't visible anymore
+    @Override
+    protected void onStop(){
+        super.onStop();
+        //unregister the sensor listener
+        mSensorManager.unregisterListener(this);
+    }
+}

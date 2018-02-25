@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:title="Motion Sensors">
+            <menu>
+                <item
+                    android:id="@+id/nav_accelerometer"
+                    android:icon="@drawable/icon_accelerometer"
+                    android:title="Accelerometer"/>
+                <item
+                    android:id="@+id/nav_gravity"
+                    android:icon="@drawable/icon_gravity"
+                    android:title="Gravity"/>
+                <item
+                    android:id="@+id/nav_gyroscope"
+                    android:icon="@drawable/icon_gyroscope"
+                    android:title="Gyroscope"/>
+                <item
+                    android:id="@+id/nav_gyroscope_uncalibrated"
+                    android:icon="@drawable/icon_gyroscope_u"
+                    android:title="Gyroscope (Uncalibrated)"/>
+                <item
+                    android:id="@+id/nav_linear_accelerometer"
+                    android:icon="@drawable/icon_linear_accelerometer"
+                    android:title="Linear Accelerometer"/>
+                <item
+                    android:id="@+id/nav_rotation_vector"
+                    android:icon="@drawable/icon_rotation_vector"
+                    android:title="Rotation Vector"/>
+                <item
+                    android:id="@+id/nav_step_counter"
+                    android:icon="@drawable/icon_step_counter"
+                    android:title="Step Counter"/>
+            </menu>
+        </item>
+
+        <item android:title="Position Sensors">
+            <menu>
+                <item
+                    android:id="@+id/nav_magnetic_field"
+                    android:icon="@drawable/icon_magnetic_field"
+                    android:title="Magnetic Field"/>
+                <item
+                    android:id="@+id/nav_orientation"
+                    android:icon="@drawable/icon_orientation"
+                    android:title="Orientation"/>
+                <item
+                    android:id="@+id/nav_magnetic_field_uncalibrated"
+                    android:icon="@drawable/icon_magnetic_field_u"
+                    android:title="Magnetic Field (Uncalibrated)"/>
+                <item
+                    android:id="@+id/nav_proximity"
+                    android:icon="@drawable/icon_proximity"
+                    android:title="Proximity"/>
+            </menu>
+        </item>
+
+        <item android:title="Environment Sensors">
+            <menu>
+                <item
+                    android:id="@+id/nav_ambient_temperature"
+                    android:icon="@drawable/icon_ambient_temperature"
+                    android:title="Ambient Temperature"/>
+                <item
+                    android:id="@+id/nav_light"
+                    android:icon="@drawable/icon_light"
+                    android:title="Light"/>
+
+                <item
+                    android:id="@+id/nav_pressure"
+                    android:icon="@drawable/icon_pressure"
+                    android:title="Pressure"/>
+                <item
+                    android:id="@+id/nav_relative_humidity"
+                    android:icon="@drawable/icon_relative_humidity"
+                    android:title="RelativeHumidity"/>
+            </menu>
+        </item>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <!--item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/icon_setting"
+                android:title="Setting" /-->
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/icon_exit"
+                android:title="Exit" />
+        </menu>
+    </item>
+
+</menu>
