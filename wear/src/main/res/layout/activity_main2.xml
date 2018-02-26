@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context="ipramodsinghrawat.it.androidwearalpha.MainActivity"
+    tools:deviceIds="wear"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/heartRateText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="--"
+            android:textColor="@color/red"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/heartImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_above="@id/heartRateText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/bpmText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bpm"
+            android:textColor="@color/black"
+            android:layout_below="@id/heartRateText"
+            android:layout_marginLeft="3dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"/>
+
+        <ImageButton
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/bpmText"
+            android:layout_marginTop="5dp" />
+
+        <ImageButton
+            android:id="@+id/btnPause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/bpmText"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+</LinearLayout>
+

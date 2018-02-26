@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Android Wear Alpha</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_step_counter_sensor">StepCounterSensorActivity</string>
+
+    <string name="activity_sensor_accelerometer">Accelerometer Sensor</string>
+    <string name="activity_sensor_ambient_temperature">Ambient Temperature Sensor</string>
+    <string name="activity_sensor_gravity">Gravity Sensor</string>
+    <string name="activity_sensor_orientation">Orientation Sensor</string>
+    <string name="activity_sensor_gyroscope">Gyroscope Sensor</string>
+    <string name="activity_sensor_light">Light Sensor</string>
+    <string name="activity_linear_accelerometer">Linear Accelerometer Sensor</string>
+    <string name="activity_sensor_magnetic_field">Magnetic Field Sensor</string>
+    <string name="activity_sensor_pressure">Pressure Sensor</string>
+    <string name="activity_sensor_proximity">Proximity Sensor</string>
+    <string name="activity_sensor_relative_humidity">Relative Humidity Sensor</string>
+    <string name="activity_sensor_rotation_vector">Rotation Vector Sensor</string>
+    <string name="activity_sensor_magnetic_field_uncalibrated">Magnetic Field Uncalibrated Sensor</string>
+    <string name="activity_sensor_gyroscope_uncalibrated">Gyroscope Uncalibrated Sensor</string>
+    <string name="activity_sensor_step_counter">Step Counter Sensor</string>
+    <string name="activity_game_rotation_vector">Game Rotation Vector Sensor</string>
+
+    <string name="activity_significant_motion">Significant Motion Sensor</string>
+
+    <string name="activity_simple_mapview_title">activity_simple_mapview_title</string>
+
+
+    <string name="activity_map_fragment_title">activity_map_fragment_title</string>
+
+    <string name="activity_map_offline_title">activity_map_offline_title</string>
+    <string name="activity_location_tracking_title">activity_location_tracking_title</string>
+    <string name="title_activity_accelerometer">AccelerometerActivity</string>
+    <string name="title_activity_ambient_temperature">AmbientTemperatureActivity</string>
+    <string name="title_activity_gravity">GravityActivity</string>
+    <string name="title_activity_orientation">OrientationActivity</string>
+    <string name="title_activity_magnetic_field">MagneticFieldActivity</string>
+    <string name="title_activity_gyroscope">GyroscopeActivity</string>
+    <string name="title_activity_light">LightActivity</string>
+    <string name="title_activity_linear_acceleration">LinearAccelerationActivity</string>
+    <string name="title_activity_pressure">PressureActivity</string>
+    <string name="title_activity_proximity">ProximityActivity</string>
+    <string name="title_activity_relative_humidity">RelativeHumidityActivity</string>
+    <string name="title_activity_rotation_vector">RotationVectorActivity</string>
+    <string name="title_activity_magnetic_field_uncalibrated">MagneticFieldUncalibratedActivity
+    </string>
+    <string name="title_activity_gyroscope_uncalibrated">GyroscopeUncalibratedActivity</string>
+    <string name="title_activity_step_counter">StepCounterActivity</string>
+    <string name="title_activity_game_rotation_vector">GameRotationVectorActivity</string>
+    <string name="title_activity_significant_motion">SignificantMotionActivity</string>
+
+
+    <!--string name="activity_simple_mapview_title">activity_simple_mapview_title</string>
+
+    <string name="activity_simple_mapview_title">activity_simple_mapview_title</string-->
+
+</resources>
